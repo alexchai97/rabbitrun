@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rabbit Run Game</title>
+    <link rel="stylesheet" href="gameStyle.css">
+    
+</head>
+
+<body>
+    <audio id="GameBGM" loop>
+        <source src="music/BGM.mp3" type="audio/mp3">
+    </audio>
+    <audio id="GameOverMusic">
+        <source src="music/Game_Over.mp3" type="audio/mp3">
+    </audio>
+    <audio id="StartGameMusic">
+        <source src="music/Start_Game.wav" type="audio/wav">
+    </audio>
+
+	<h1>Rabbit Run</h1>
+    <div id="container">
+        <div id="Sun">
+            <img src="assets/Sun.gif" alt="sun">
+        </div>
+        <div id="Mountain">
+            <img src="assets/mountain.png" alt="mountain">
+        </div>
+        <div id="rabbit">
+            <img src="assets/Rabbit.gif" alt="rabbit">
+        </div>
+        <div id="block">
+            <img src="assets/Stone.png" alt="blocks">
+        </div>
+        <div id="road">
+            <img src="assets/road.png" alt="road">
+        </div>
+        <div id="cloud">
+            <img src="assets/cloud.png" alt="cloud">
+        </div>
+        <div id="score">Score <b>00</b></div>
+        <div id="gameOver">Game Over</div>
+        <div id="gameStart">
+            <span id="start-game-text">Start Game<br></span>
+            Tap👆 or Press Spacebar to <span id="if-restart">Start</span> Game and Jump🐰
+        </div>
+    </div>
+    <script src="gameCode.js"></script>
+	
+	<footer>	
+		<small>Created by Kah Yip and Alex as part of college assignment</small>
+	</footer>
+</body>
+
+</html>

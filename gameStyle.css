@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Press+Start+2P&family=Stint+Ultra+Condensed&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    transition-duration: 0.3s;
+
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+#container {
+    height: 400px;
+    width: 1000px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+}
+
+#container #rabbit {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    bottom: 28px;
+    left: 20px;
+}
+
+#container #Sun {
+    height: 70px;
+    width: 70px;
+    top: 30px;
+    left: 100px;
+    ;
+    position: relative;
+    z-index: 2;
+}
+
+
+#score,
+#gameOver,
+#gameStart {
+    z-index: 100;
+}
+
+#container #rabbit img {
+    height: 70px;
+    width: 70px;
+}
+
+.rabbitActive {
+    animation: animateRabbit 0.5s linear infinite;
+}
+
+@keyframes animateRabbit {
+
+    0%,
+    100% {
+        bottom: 28px;
+    }
+
+    45%,
+    55% {
+        bottom: 160px;
+    }
+}
+
+#container #block {
+    height: 80px;
+    width: 70px;
+    position: absolute;
+    bottom: 20px;
+    right: -20px;
+}
+
+#container #block img {
+    height: 80px;
+    width: 70px;
+}
+
+.blockActive {
+    animation: blockAnimate 1.8s linear infinite;
+}
+
+@keyframes blockAnimate {
+    0% {
+        right: -125px;
+    }
+
+    100% {
+        right: 100%;
+    }
+}
+
+#container #road {
+    height: 30px;
+    width: 1200px;
+    position: absolute;
+    bottom: 0;
+}
+
+#container #road img {
+    height: 30px;
+    width: 2000px;
+    position: absolute;
+
+    left: 0;
+    animation: none;
+}
+
+@keyframes roadAnimate {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -800px;
+    }
+}
+
+#container #cloud {
+    height: 80px;
+    width: 1200px;
+    position: absolute;
+    top: 40px;
+
+    z-index: 1;
+}
+
+#container #cloud img {
+    height: 80px;
+    width: 2000px;
+    position: absolute;
+    animation: none;
+}
+
+@keyframes cloudAnimate {
+    0% {
+        left: -0px;
+    }
+
+    100% {
+        left: -2000px;
+    }
+}
+
+#container #Mountain {
+    height: 1080px;
+    width: 1920px;
+    position: absolute;
+    top: 0px;
+    opacity: 95%;
+
+    background: linear-gradient(180deg, rgba(70,172,202,1) 0%, rgba(208,253,252,1) 30%, rgba(208,253,252,1) 100%);
+}
+
+#container #Mountain img {
+    height: 400px;
+    width: 3000px;
+    position: absolute;
+    animation: none;
+}
+
+@keyframes MountainAnimate {
+    0% {
+        left: -0px;
+    }
+
+    100% {
+        left: -2000px;
+    }
+}
+
+#score {
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+
+#score, #score b {
+    font-family: 'Stint Ultra Condensed', cursive;
+    font-size: 2.5rem;
+    color: #525252;
+}
+
+#gameOver {
+    display: none;
+    font-size: 50px;
+    position: absolute;
+    left: calc(50% - 210px);
+    top: calc(50% - 50px);
+    width: 500px;
+    height: 80px;
+    color: #525252;
+    font-family: 'Press Start 2P';
+    animation: wobble 3s linear infinite both;
+
+    text-transform: uppercase;
+}
+
+
+#gameStart,
+#if-restart {
+
+    color: #525252;
+    text-align: center;
+    font-family: Concert One;
+    font-size: 20px;
+}
+
+#gameStart {
+    position: absolute;
+    left: calc(50% - 250px);
+    top: 50%;
+    width: 500px;
+    height: 80px;
+
+    animation: breathing 2s ease-out infinite normal;
+}
+
+#start-game-text {
+    color: #525252;
+    font-size: 50px;
+    font-family: 'Press Start 2P';
+    text-transform: uppercase;
+}
+
+
+@keyframes breathing {
+    0% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    50% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+
+    100% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
+
+@keyframes wobble {
+
+    0%,
+    50% {
+        transform: translateX(0);
+        transform-origin: 50% 50%
+    }
+
+    8% {
+        transform: translateX(-30px) rotate(-6deg)
+    }
+
+    15% {
+        transform: translateX(15px) rotate(6deg)
+    }
+
+    23% {
+        transform: translateX(-15px) rotate(-3.6deg)
+    }
+
+    30% {
+        transform: translateX(9px) rotate(2.4deg)
+    }
+
+    38% {
+        transform: translateX(-6px) rotate(-1.2deg)
+    }
+}
+
+body {
+    background-color: var(--current-theme-color);
+}
+
+h1, small {
+	font-family: 'Concert One';
+	color: #555;
+}
+
+h1 {
+	font-size: 3rem;
+}
